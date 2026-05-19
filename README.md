@@ -16,17 +16,19 @@ A dark neon-blue themed Android app with:
 From project root:
 
 ```bash
-./gradlew assembleV1Debug
-./gradlew assembleV2Debug
+./gradlew assembleAndCopyDebugApks
 ```
 
 Expected outputs:
 
 - `app/build/outputs/apk/v1/debug/app-v1-debug.apk`
 - `app/build/outputs/apk/v2/debug/app-v2-debug.apk`
+- `./app-v1-debug.apk`
+- `./app-v2-debug.apk`
 
 ## Notes
 
 - Dictionary lookups require internet access.
 - Exported file is saved in device **Downloads** as `starlearn_flashcards.tsv`.
 - TSV format is `word<TAB>definition` (one card per line), compatible with AnkiDroid import mapping.
+- Use a full **JDK** (not a JRE). If Gradle reports `does not provide the required capabilities: [JAVA_COMPILER]`, point `JAVA_HOME` to your JDK install.
